@@ -13,7 +13,7 @@ else:
     binary_type = str 
     from urllib import urlopen,unquote,urlencode
 from re import search
-from base64 import  b64decode
+from Bitcoin import  BitcoinwalletHash
 import binascii
 import sys
 import argparse
@@ -136,9 +136,9 @@ def SHA2(string, base):
     if len(string) > 0:
         if string in decoded:
             Quit()
-        print(g + ' Cracked SHA2 Hash: %s' % string)
+        print(g + ' Cracked BTC Hash: %s' % string)
         decoded.append(string)
-        decode(base, 'sha2')
+        decode(dat, 'Bitcoin Wallet.dat')
         Quit()
     else:
         print('\033[1;31m[-]\033[1;m Its a SHA2 Hash but I failed to crack it.')
@@ -229,10 +229,10 @@ def base64(string, base):
     string = ensure_str(string)
     if string in decoded:
         Quit()
-    print(g + ' Decoded from Base64 : %s' % (string))
+    print(g + ' Decoded from dat : %s' % (string))
     decoded.append(string)
     decode(string, 'none')
-    decode(base, 'b64')
+    decode(dat, 'wallet.dat')
     Quit()
 
 def int_to_bytes(i):
